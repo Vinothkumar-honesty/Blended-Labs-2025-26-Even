@@ -2,9 +2,9 @@
 
 ## Author
 
-* **Name**: ________________________________
-* **Register Number**: _____________________
-* **Date of Submission**: __________________
+* **Name**: VINOTHKUMAR R
+* **Register Number**: 212224040361
+* **Date of Submission**: 14.02.26
 
 ---
 
@@ -85,35 +85,48 @@ Create a simple HTML page and verify that it can be accessed from a web browser 
 
 ## Workflow (Student Explanation)
 
-(Write the steps you followed in your own words)
+Here is the workflow explained like a student explanation (simple and natural way to say in class):
 
-1. ---
-2. ---
-3. ---
-4. ---
-5. ---
+First, I created a VPC in Amazon Web Services.
+I gave it a CIDR block of 10.0.0.0/16. This VPC acts as my private network where all my resources will be created.
 
----
+Next, I created a public subnet inside the VPC with CIDR 10.0.1.0/24. I enabled auto-assign public IP so that any instance launched in this subnet will automatically get a public IP address.
+
+After that, I created an Internet Gateway and attached it to my VPC. This allows my VPC to communicate with the internet.
+
+Then, I created a route table and added a default route (0.0.0.0/0) pointing to the Internet Gateway. I associated this route table with my public subnet. This step ensures that traffic from my subnet can reach the internet.
+
+Next, I created a security group which acts as a virtual firewall. I allowed inbound traffic for SSH on port 22 and HTTP on port 80.
+
+After completing the network setup, I launched an EC2 instance using Amazon Linux 2 AMI with instance type t2.micro. I selected my VPC, public subnet, created security group, and key pair.
+
+Finally, I connected to the EC2 instance using SSH and installed the Apache web server. I started the service and created a simple HTML page. Then I copied the public IP address of the instance and opened it in a web browser. The webpage was displayed successfully.
+
+So, this is how I created a VPC, launched an EC2 instance, and hosted a simple web server in AWS.
 
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: VPC and Subnet Details
 
-(Insert Screenshot Here)
+<img width="1919" height="950" alt="Screenshot 2026-02-14 102805" src="https://github.com/user-attachments/assets/bbb61ef2-1b6e-4281-a888-67fa1bc0f758" />
 
----
+
+
 
 ### Screenshot 2: EC2 Instance Running
 
-(Insert Screenshot Here)
+<img width="1253" height="976" alt="Screenshot 2026-02-14 103748" src="https://github.com/user-attachments/assets/92b03345-e362-433a-a810-053f997046b1" />
+
+<img width="1259" height="912" alt="Screenshot 2026-02-14 104058" src="https://github.com/user-attachments/assets/6e7d0e2e-7b06-4ec4-a96d-49f49cf8c612" />
 
 ---
 
 ### Screenshot 3: Web Server Output in Browser
 
-(Insert Screenshot Here)
+<img width="1426" height="503" alt="Screenshot 2026-02-14 110556" src="https://github.com/user-attachments/assets/a63d437f-1562-45d8-bacc-466004e8d91d" />
 
----
+
+
 
 ## Result 
 
