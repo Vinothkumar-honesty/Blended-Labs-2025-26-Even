@@ -2,9 +2,9 @@
 
 ## Author
 
-* **Name**: ________________________________
-* **Register Number**: _____________________
-* **Date of Submission**: __________________
+* **Name**: VINOTHKUMAR R
+* **Register Number**: 212224040361
+* **Date of Submission**13.03.25: 
 
 ---
 
@@ -82,33 +82,32 @@ Test the database server by connecting to it locally or remotely and performing 
 
 ## Workflow (Student Explanation)
 
-(Write the steps you followed in your own words)
+First, I opened the AWS Management Console and went to the VPC service. I created a new security group named DB Security Group and configured it to allow MySQL (port 3306) access from the Web Security Group.
 
-1. ---
-2. ---
-3. ---
-4. ---
-5. ---
+Next, I navigated to the RDS service and created a DB Subnet Group named DB-Subnet-Group. I selected the Lab VPC, chose two availability zones (us-east-1a and us-east-1b), and added the required subnets (10.0.1.0/24 and 10.0.3.0/24).
 
----
+After that, I created a new Amazon RDS MySQL database instance. I selected Dev/Test template, enabled Multi-AZ deployment, and configured details like DB identifier (lab-db), username (main), and password (lab-password). I also selected db.t3.micro instance type and attached the DB Security Group.
 
+Once the database was created, I waited until its status became available and then copied the endpoint URL from the connectivity section.
+
+Finally, I opened the web application using the provided EC2 IP address, navigated to the RDS section, and entered the database details (endpoint, database name, username, password). After submitting, I successfully connected the app and tested it by adding and managing contacts in the address book.
 ## Output Screenshots (Attach 3)
 
 ### Screenshot 1: EC2 Instance for Database Server
 
-(Insert Screenshot Here)
+<img width="1181" height="1199" alt="Screenshot 2026-03-13 140213" src="https://github.com/user-attachments/assets/39939ba6-bd9d-4141-8ca3-f304b99ef0d4" />
 
 ---
 
 ### Screenshot 2: Database Service Running
 
-(Insert Screenshot Here)
+<img width="1178" height="1040" alt="Screenshot 2026-03-13 140709" src="https://github.com/user-attachments/assets/91cc487a-3cd1-4fad-be04-259f5a72997f" />
 
 ---
 
 ### Screenshot 3: Sample Database and Table
 
-(Insert Screenshot Here)
+<img width="1179" height="1050" alt="Screenshot 2026-03-13 142132" src="https://github.com/user-attachments/assets/51d70a3a-986a-4d0c-a070-9a0c4bdb895f" />
 
 ---
 
